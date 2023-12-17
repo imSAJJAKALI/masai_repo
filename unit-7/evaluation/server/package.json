@@ -1,0 +1,28 @@
+{
+  "name": "mock6server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imSAJJAKALI/mock6server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imSAJJAKALI/mock6server/issues"
+  },
+  "homepage": "https://github.com/imSAJJAKALI/mock6server#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.4",
+    "nodemon": "^3.0.1"
+  }
+}

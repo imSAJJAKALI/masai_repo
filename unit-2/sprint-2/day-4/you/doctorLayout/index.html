@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 90%;
+        }
+        .banner{
+            width: 100%;
+        }
+        .banner>img{
+            width: 100%;
+        }
+        .service{
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            width: 90%;
+            gap: 20px;
+        }
+       
+        .service >div> img{
+            width: 100%;
+           
+        }
+        .work{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+            width: 90%;
+            margin: auto;
+            
+        }
+       
+        .work >div >img{
+            width: 100%;
+        }
+
+       @media screen and (min-width: 600px) and (max-width: 800px)  {
+          .service{
+            grid-template-columns: repeat(3,1fr);
+            flex-direction: column;
+          }
+          .work{
+            grid-template-columns: repeat(2,1fr);
+            flex-direction: column;
+          }
+       }
+       @media screen and (min-width: 200px) and (max-width: 600px)  {
+          .service{
+            grid-template-columns: repeat(2,1fr);
+            flex-direction: column;
+          }
+          .work{
+            grid-template-columns: repeat(1,1fr);
+            flex-direction: column;
+          }
+       }
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="banner"><img src="https://www.practostatic.com/consumer-home/practo-care/1631634827/dweb_hero_banner.png" alt=""></div>
+        
+
+        <div class="service">
+            <div><img src="https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_instant_video_consulation.png" alt=""></div>
+            <div><img src="https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_instant_video_consulation.png" alt=""></div>
+            <div><img src="https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_instant_video_consulation.png" alt=""></div>
+            <div><img src="https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_instant_video_consulation.png" alt=""></div>
+            <div><img src="https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_instant_video_consulation.png" alt=""></div>
+            <div><img src="https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_instant_video_consulation.png" alt=""></div>
+        </div>
+
+        <divc class="work">
+            <div><img src="https://www.practostatic.com/consumer-home/desktop/images/1558283618/sp-dentist@2x.jpg" alt=""></div>
+            <div><img src="https://www.practostatic.com/consumer-home/desktop/images/1558283618/sp-dentist@2x.jpg" alt=""></div>
+            <div><img src="https://www.practostatic.com/consumer-home/desktop/images/1558283618/sp-dentist@2x.jpg" alt=""></div>
+            <div><img src="https://www.practostatic.com/consumer-home/desktop/images/1558283618/sp-dentist@2x.jpg" alt=""></div>
+            <div><img src="https://www.practostatic.com/consumer-home/desktop/images/1558283618/sp-dentist@2x.jpg" alt=""></div>
+            <div><img src="https://www.practostatic.com/consumer-home/desktop/images/1558283618/sp-dentist@2x.jpg" alt=""></div>
+            <div><img src="https://www.practostatic.com/consumer-home/desktop/images/1558283618/sp-dentist@2x.jpg" alt=""></div>
+            <div><img src="https://www.practostatic.com/consumer-home/desktop/images/1558283618/sp-dentist@2x.jpg" alt=""></div>
+        </div>
+    </div>
+    
+</body>
+</html>

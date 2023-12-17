@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url('https://as2.ftcdn.net/v2/jpg/04/60/71/01/1000_F_460710131_YkD6NsivdyYsHupNvO3Y8MPEwxTAhORh.jpg');
+            background-repeat: no-repeat;
+            background-size: cover ;
+        }
+        header{
+
+            background-color: #5B9A8B;
+            padding: 20px;
+
+        }
+        nav{
+            display: flex;
+            justify-content: space-evenly;
+           
+        }
+        nav a{
+            text-decoration: none;
+            color: white;
+            font-size: large;
+        }
+        label{
+            color: white;
+        }
+        .formdiv{
+           
+         display: flex;
+         justify-content:center;
+        
+        }
+        form{
+            padding: 50px;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border: 2px solid teal;
+            border-radius: 10px;
+            background-color: rgba(76, 175, 80, 0.3);
+           
+        }
+        form input{
+            padding: 15px;
+            margin: 5px;
+        }
+        h1{
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+   <header>
+      <nav>
+        <a href="event.html">Events Page</a>
+        <a href="index.html">Login Page</a>
+      </nav>
+   </header>
+   <h1>Admin Login</h1>
+   <div class="formdiv">
+       <form action="" id="userForm">
+        <label for="email">Email: </label>
+        <input type="email"   id="email" placeholder="Enter your Email">
+        <label for="password">Password: </label>
+        <input type="password"  placeholder="Enter your Password"  id="password">
+       <input type="submit" value="Login">
+    </form>
+   </div>
+</body>
+<script src="index.js"></script>
+</html>

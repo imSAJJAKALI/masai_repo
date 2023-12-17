@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hour">0</h1>
+    <h1 id="minute">0</h1>
+    <h1 id="second">0</h1>
+</body>
+<script>
+    let hour=document.getElementById("hour");
+    let minute=document.getElementById("minute");
+    let second=document.getElementById("second");
+
+    let count1=0;
+    let count2=0;
+    let count3=0;
+
+    setInterval(function(){
+         count1++
+         second.innerText=count1;
+         if(count1==60){
+            count1=0;
+            count2++;
+            minute.innerText=count2;
+            if(count2==60){
+                count2=0;
+                count3++
+                hour.innerText=count3;
+                if(count3==12){
+                    count3=0;
+                }
+            }
+         }
+    },1000)
+</script>
+</html>

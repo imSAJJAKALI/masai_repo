@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      /* All Your css for Home page goes here  */
+      #menu-container{
+       display: grid;
+       grid-template-columns: repeat(4,1fr);
+       gap: 20px;
+      }
+      #menu-container div img{
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <h1>Web Coffee Shop Menu</h1>
+      <a href="./index.html">Home</a>
+      <a href="./order.html">Ordered</a>
+    </div>
+    <div id="filter">
+      <input type="number" id="lower" />
+      <input type="number" id="upper" />
+      <button id="filter-btn">Filter</button>
+    </div>
+    <select id="sort">
+      <option value="">Sort By Price</option>
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+    <h1 id="alert"></h1>
+    <div id="menu-container">
+      <!-- Here Append All the Items  -->
+      
+      
+
+    </div>
+  </body>
+  <script>
+    // All your JS code for Home Page goes here
+    const url = `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee`;
+    var sortData=[]
+    var filter =[]
+    fetch(url)
+    .then((res)=>{
+      return res.json()
+    })
+    .then((data)=>{
+      filter=(data.data)
+      sortData=(data.data)
+      showData(data.data)
+    })
+    .catch((err)=>{
+      console.log("error")
+    })
+     
+    let container = document.getElementById("menu-container")
+    
+    //sorting part start
+    let sort = document.getElementById("sort")
+    sort.addEventListener("change",(e)=>{
+      e.preventDefault()
+
+     
+     
+      if(sort.value == 'desc'){
+      // let newData=(sortData.sort((a,b)=>(a.price>b.price)? 1 : (b.price>a.price)? -1 : 0)) 
+      let link=`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee?sort=price&order=desc`
+      fetch(link)
+      .then((res)=>{
+        return res.json()
+      }).then((deta)=>{
+        showData(deta.data)
+      })
+      
+       
+      }
+      if(sort.value == 'asc'){
+
+        let link=`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee?sort=price&order=asc`
+      fetch(link)
+      .then((res)=>{
+        return res.json()
+      }).then((deta)=>{
+        showData(deta.data)
+      })
+      
+       
+      }
+
+    })
+    //sorting part end
+
+    //filter part start
+    let lower = document.getElementById('lower')
+    let upper = document.getElementById('upper')
+    let filterBtn = document.getElementById("filter-btn")
+    filterBtn.addEventListener('click',(e)=>{
+      e.preventDefault()
+     let data =[]
+     filter.filter((ele)=>{
+      if(lower.value<=ele.price && ele.price<=upper.value  ){
+        data.push(ele)
+      }
+     })
+     showData(data)
+
+    })
+
+     let buyData = JSON.parse(localStorage.getItem('buy'))||[]
+
+    function showData(data){
+      container.innerHTML=null
+      data.forEach((ele,index)=>{
+        
+      let div =document.createElement('div')
+      let image = document.createElement("img")
+      image.setAttribute("src",ele.image)
+      let title = document.createElement("h3")
+      title.innerText=ele.title;
+      let ingredients = document.createElement("p")
+      ingredients.innerText= ele.ingredients.join(" ")
+      let desc = document.createElement("p")
+      desc.innerText= ele.description;
+       
+      let price = document.createElement("p")
+      price.innerText="₹"+ele.price
+       let buy= document.createElement("button")
+       buy.innerText='Buy'
+       buy.style.backgroundColor="blue"
+       // Buy part add to local Storage
+       buy.addEventListener('click',(e)=>{
+        e.preventDefault()
+         buyData.push(ele)
+         localStorage.setItem('buy',JSON.stringify(buyData))
+       })
+      
+      div.append(image,title,ingredients,desc,price,buy)
+      container.append(div)
+       
+      })
+    }
+   
+
+   
+  </script>
+</html>

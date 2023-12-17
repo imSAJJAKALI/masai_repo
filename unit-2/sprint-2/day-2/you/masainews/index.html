@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main > h1{
+            text-align: center;
+        }
+        .box {
+            display: flex;
+            row-gap: 5%;
+            margin: 2% 0;
+            
+        }
+        .box > .child{
+            
+            margin: 50px;
+            width: 300px;
+            padding: 50px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 10px;
+        }
+        .box > .child >img{
+            width: 100%;
+        }
+        .button{
+            display: flex;
+            justify-content: center;
+        }
+        .button > button{
+            height: 40px;
+            color: red;
+            background-color: white;
+            border: 1px solid red;
+            border-radius: 5px;
+            
+        }
+        .bottom{
+            display: flex;
+            padding: 50px;
+            justify-content: space-evenly;
+        }
+        .bottom >div{
+            width: 350px;
+            
+        }
+        .bottom >div> img{
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="main">
+        <h1>Masai In The News</h1>
+        <div class="box">
+            <div class="child"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/ET_3754cc10ec.png" alt=""><p>21 DEC 2021</p>
+            <h3>Edtech startup Masai School acquires data analytics firm Prepleag for $1 million.</h3>
+             <p>With their latest acquistion, Masai moves one step closer to becomin...</p>
+            </div>
+            <div class="child"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/money_Control_c3e25f5ceb.png" alt=""><p>26 OCT 2021</p>
+            <h3>Edtech startup Masai School acquires data analytics firm Prepleag for $1 million.</h3>
+             <p>With their latest acquistion, Masai moves one step closer to becomin...</p>
+            </div>
+            <div class="child"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/vccircle_6ef779c958.png" alt=""><p>18 AUG 2020</p>
+            <h3>Edtech startup Masai School acquires data analytics firm Prepleag for $1 million.</h3>
+             <p>With their latest acquistion, Masai moves one step closer to becomin...</p>
+            </div>
+            
+        </div>
+        <div class="button" ><button>SEE MORE ></button></div>
+        <h1>Our Invetors, Who belive in us</h1>
+        <div class="bottom">
+            <div><img src="https://www.masaischool.com/img/our-investors/unitus.svg" alt=""></div>
+            <div><img src="https://www.masaischool.com/img/our-investors/omidyar.svg" alt=""></div>
+            <div><img src="https://www.masaischool.com/img/our-investors/indiaQuotient.svg" alt=""></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container>div{
+            height: 150px;
+           
+            border: 1px solid teal;
+            border-radius: 10px;
+        }
+      
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+           width: 80%;
+           margin: auto;
+        }
+       @media screen and (min-width:600px) and (max-width:800px){
+          .container{
+            grid-template-columns: repeat(2,1fr);
+          }
+        
+       }
+       @media screen and (min-width:200px) and (max-width:600px){
+          .container{
+            grid-template-columns: repeat(1,1fr);
+          }
+        
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>cofee</div>
+        <div>cofee</div>
+        <div>cofee</div>
+        <div>cofee</div>
+        <div>cofee</div>
+        <div>cofee</div>
+        <div>cofee</div>
+        <div>cofee</div>
+        <div>cofee</div>
+
+    </div>
+</body>
+</html>

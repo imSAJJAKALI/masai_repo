@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .main{
+
+            width: 60%;
+            height: 300px;
+           
+            text-align: center;
+            padding-top: 100px;
+
+        }
+    </style>
+</head>
+<body>
+   <div class="main">
+    <div>
+        <input id="input1" type="text" placeholder="enter 1st number">
+        <input id="input2" type="text" placeholder="enter 1st number">
+    </div>
+    <div>
+        <button id="add">Add</button>
+        <button id="minus">Subtract</button>
+        <button id="mul">Multiply</button>
+        <button id="divide">Divide</button>
+    </div>
+   </div>
+</body>
+    <script>
+        let num1=document.getElementById('input1');
+        let num2=document.getElementById('input2');
+
+        let add=document.getElementById('add');
+        let minus=document.getElementById('minus');
+        let mul=document.getElementById('mul');
+        let divide=document.getElementById('divide');
+        
+        
+        add.addEventListener('click',()=>{
+            alert(Number(num1.value)+Number(num2.value));
+        })
+        minus.addEventListener('click',()=>{
+            alert(Number(num1.value)-Number(num2.value));
+        })
+        mul.addEventListener('click',()=>{
+            alert(Number(num1.value)*Number(num2.value));
+        })
+        divide.addEventListener('click',()=>{
+            alert(Number(num1.value)/Number(num2.value));
+        })
+    </script>
+</html>

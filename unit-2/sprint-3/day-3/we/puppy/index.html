@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+           width: 200px;
+            
+        }
+    </style>
+</head>
+<body>
+    <img src="https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445" alt="">
+    <button id="like">like</button>
+    <button id="dislike">dislike</button>
+    <h1 id="likee">0</h1>
+    <h1 id="dislikee">0</h1>
+</body>
+</html>
+<script>
+    let like=document.getElementById("like")
+    let dislike=document.getElementById("dislike")
+    let heading1=document.getElementById("likee")
+    let heading2=document.getElementById("dislikee")
+    let lcount=localStorage.getItem("like")
+    let dcount=localStorage.getItem("dislike")
+    like.addEventListener("click",()=>{
+        lcount++
+        heading1.innerText=lcount;
+        localStorage.setItem("like",JSON.stringify(lcount));
+    })
+    dislike.addEventListener("click",()=>{
+        dcount++
+        heading2.innerText=dcount;
+        localStorage.setItem("dislike",JSON.stringify(dcount));
+    })
+</script>

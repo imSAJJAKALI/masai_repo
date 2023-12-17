@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+    <style>
+      /* Write all necessery css here  */
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <h1>Masai E-Commerce</h1>
+      <a href="./index.html">Home</a>
+      <a href="./cart.html">Cart</a>
+    </div>
+    <h1 id="total">Your Total cart Price is:- <span id="cart-total">0</span></h1>
+    <div id="cart-container">
+      <!-- Here Append All the cart Products  -->
+      
+    </div>
+  </body>
+  <script>
+    // Write all necessery JS here 
+    let cartData=JSON.parse(localStorage.getItem("cart"))
+    if(cartData==null) cartData=[]
+    displayProduct(cartData)
+
+    
+    function displayProduct(data){
+      data.forEach((element)=>{
+        let cont=document.getElementById("cart-container")
+        let card=document.createElement("div")
+        let image=document.createElement("img")
+        image.setAttribute("src",element.img)
+        let Brand=document.createElement("h2")
+        Brand.innerText=element.brand;
+        let Price=document.createElement("h3")
+        Price.innerText=element.price;
+        let Details=document.createElement("p")
+        Details.innerText=element.details;
+        let Category=document.createElement("h3")
+        Category.innerText="Category:- "+element.category;
+        let addBtn=document.createElement("button")
+        addBtn.innerText="+"
+        let quantity=document.createElement("span")
+        quantity.innerText=element.quanity;
+        let minusBtn=document.createElement("button")
+        minusBtn.innerText="-"
+        let remove=document.createElement("button")
+        remove.innerText="Remove"
+        let qunity=element.quanity
+        addBtn.addEventListener("click",()=>{
+          qunity++
+        })
+        quantity.innerText=element.quanity;
+
+        card.append(image,Brand,Price,Details,Category,addBtn,quantity,minusBtn,remove)
+        cont.append(card)
+        
+        
+      })
+    }
+  </script>
+</html>

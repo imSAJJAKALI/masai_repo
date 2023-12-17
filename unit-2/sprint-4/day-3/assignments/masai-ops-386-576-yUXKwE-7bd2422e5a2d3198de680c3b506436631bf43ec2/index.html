@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #search{
+       
+        margin-left: 500px;
+        margin-top: 50px;
+       }
+        #movie_container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+            width: 80%;
+            margin: auto;
+            margin-top: 50px;
+        }
+        #movie_container >div >img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="search">
+        <input type="text" name="" id="search-inp">
+        <button id="search-btn">search</button>
+    </div>
+    <div id="movie_container"></div>
+</body>
+    <script>
+    
+        fetch(" https://www.omdbapi.com/?apiKey=b8fc8f53&s=avengers")
+        .then((resolve)=>{
+            return resolve.json();
+        })
+        .then((res)=>{
+            // actualData(res)
+            arr.push(res.Search)
+            actualData(res.Search)
+        })
+        .catch((err)=>{
+            console.log(error);
+        })
+    
+       
+        let arr=[]
+        console.log(arr)
+        let container=document.getElementById("movie_container")
+        let button=document.getElementById("search-btn")
+        let search=document.getElementById("search-inp")
+         
+        button.addEventListener("click",()=>{
+           let filter= arr.filter((ele)=>{
+                if(search.value==ele.Title){
+                    alert("button clicked")
+                return true;
+            }else{
+                return false;
+            }
+            })
+            actualData(filter)
+        })
+        
+        
+
+
+        function actualData(data){
+          
+           data.forEach((element,index)=>{
+            let card =document.createElement("div")
+            let image=document.createElement("img")
+            image.setAttribute("src",element.Poster)
+            let title =document.createElement("h2")
+            title.innerText=element.Title;
+
+
+
+            card.append(image,title)
+            container.append(card)
+           })
+        }
+    </script>
+</html>

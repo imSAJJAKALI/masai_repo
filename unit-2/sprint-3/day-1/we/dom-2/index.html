@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="main">
+    <h1 id="firstH1">First H1</h1>
+    <h1>Second H1</h1>
+    <h3>First H3</h3>
+    <h3>Second H3</h3>
+    <h5 class="blue">First H5</h5>
+    <h5 class="blue">Second H5</h5>
+    <h5>Third H5</h5>
+    <div class="green">First DIV</div>
+    <div class="red">Second DIV</div>
+    <div class="blue">Third DIV</div>
+    <p class="green">First P</p>
+    <p class="red">Second P</p>
+    <p class="blue">Third P</p>
+    <hr />
+    <button onClick="changeH1()">Change H1</button>
+    <button onClick="changeH3()">Change H3</button>
+    <button onClick="changeH5()">Change H5</button>
+    <button onClick="changeGreen()">Change Green</button>
+    <button onClick="changeRed()">Change Red</button>
+    <button onClick="changeBlue()">Change Blue</button>
+
+</body>
+   <script>
+      
+      function changeH1() {
+        // the colour of first <h1> should turn to red
+            document.getElementById("firstH1").style.color="red";
+      }
+
+      function changeH3() {
+        // the colour of all <h3> should turn to green
+            let green=document.getElementsByTagName("h3")
+            for(let i=0; i<green.length; i++){
+                green[i].style.color="green";
+            }
+      }
+
+      function changeH5() {
+        // the colour of all <h5> should turn to blue
+            let blue=document.getElementsByTagName("h5");
+            for(let i=0; i<blue.length; i++){
+                blue[i].style.color="blue";
+            }
+      }
+
+      function changeGreen() {
+        // all the elements with the class green should change to green
+       document.getElementById("main").style.color="green";
+      }
+
+      function changeRed() {
+        // all the elements with the class red should change to red
+        document.body.style.color="red"
+      }
+
+      function changeBlue() {
+        // all the elements with the class blue should change to blue
+        document.body.style.color="blue";
+      }
+
+     
+   </script>
+</html>

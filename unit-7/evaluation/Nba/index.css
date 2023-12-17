@@ -1,0 +1,53 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
+    border-bottom: 3px solid gray;
+    background-color:teal;
+    color: white;
+    
+}
+#nav1{
+   color: white;
+    font-size: 18px;
+    background-color:teal;
+}
+#nav2{
+    color: white;
+    font-size: 18px;
+    background-color:teal;
+}
+#playerCon{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    margin: auto;
+}
+#singleCard{
+  margin-top: 10px;
+  border: 3px solid gray;
+  border-radius: 20px;
+}
+#singleCard img{
+    border-radius: 50%;
+}
+#singleCard button{
+    background-color: rgb(236, 149, 109);
+}
+#singleCard h2{
+    color: gray;
+}
+
+
+#pagination{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+   
+}
+#pagination button{
+    padding: 10px;
+}

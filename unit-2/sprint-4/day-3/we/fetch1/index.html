@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 50px;
+        }
+       #container>div>img{
+        width: 100%;
+        height: 500px;
+       }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+<script>
+    let val=fetch("https://fakestoreapi.com/products")
+    val.then((resolve)=>{
+       return resolve.json()
+    })
+    .then((res)=>{
+        actualData(res);
+    })
+    .catch((error)=>{
+        console.error(error)
+    })
+
+    let mainDiv=document.getElementById("container")
+    
+    function actualData(data){
+        data.forEach((element,index)=>{
+            let product=document.createElement("div");
+            let image=document.createElement("img");
+            image.setAttribute("src",element.image);
+            let title=document.createElement("h1");
+            title.innerText=element.title;
+            let description=document.createElement("p");
+            description.innerText=element.description;
+            let price=document.createElement("p");
+            price.innerText=element.price;
+
+            product.append(image,title,description,price);
+            mainDiv.append(product);
+        })
+    }
+    
+</script>
+</html>

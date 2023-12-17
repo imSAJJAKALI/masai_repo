@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Masai Employee Records</title>
+  </head>
+  <body>
+    <!-- Use this form for taking the inputs  -->
+    <form>
+      <input placeholder="Name" type="text" id="name" />
+      <input placeholder="Employee ID" type="text" id="employee_id" />
+      <select id="department">
+        <option value="">Select Department</option>
+        <option value="HR">HR</option>
+        <option value="Finance">Finance</option>
+        <option value="Engineering">Engineering</option>
+      </select>
+      <input placeholder="Experience" type="number" id="experience" />
+      <input placeholder="Email" type="email" id="email" />
+      <input placeholder="Mobile No." type="number" id="mobile" />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <!-- Use this select tag for filtering  -->
+    <select id="filter">
+      <option value="">Select Department</option>
+      <option value="HR">HR</option>
+      <option value="Finance">Finance</option>
+      <option value="Engineering">Engineering</option>
+    </select>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Employee ID</th>
+          <th>Department</th>
+          <th>Experience in Years</th>
+          <th>Email</th>
+          <th>Mobile No</th>
+          <th>Role</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Append Rows here using JS & DOM  -->
+      </tbody>
+    </table>
+  </body>
+  <script>
+    let form=document.querySelector("form");
+    
+    let tbody=document.querySelector("tbody");
+    form.addEventListener("submit",(e)=>{
+      e.preventDefault();
+      let obj={
+        name: form.name.value,
+        employeeId: form.employee_id.value,
+        department: form.department.value,
+        experience: form.experience.value,
+        email: form.email.value,
+        mobile: form.mobile.value,
+        
+      }
+      let data = JSON.parse(localStorage.getItem("joblist"))||[];
+      data.push(obj);
+      tbody.innerHTML=null;
+      localStorage.setItem("joblist",JSON.stringify(data));
+
+      function xyz(data){
+        tbody.innerHTML=null;
+        data.forEach((element,index)=>{
+          let tr =document.createElement("tr");
+
+          let td1=document.createElement("td");
+          let td2=document.createElement("td");
+          let td3=document.createElement("td");
+          let td4=document.createElement("td");
+          let td5=document.createElement("td");
+          let td6=document.createElement("td");
+          let td7=document.createElement("td");
+          let button=document.createElement("button");
+          let td8=document.createElement("td");
+
+          td1.innerText=element.name;
+          td2.innerText=element.employeeId;
+          td3.innerText=element.department;
+          td4.innerText=element.experience;
+          td5.innerText=element.email;
+          td6.innerText=element.mobile;
+          if(td4.innerText>5){
+            td7.innerText="Senior"
+          }else if(td4.innerText>=2 && td4.innerText<=5){
+            td7.innerText="Junior"
+
+          } if(td4.innerText<=1){
+            td7.innerText="Fresher"
+          }
+
+          button.innerText="Delete"
+          button.style.backgroundColor="red";
+
+          button.addEventListener("click",()=>{
+            let delted=data.filter((el,i)=>{
+              if(i==index){
+                return false;
+              }else{
+                return true;
+              }
+            })
+            data=delted;
+            xyz(data)
+
+          })
+
+          td8.append(button)
+          tr.append(td1,td2,td3,td4,td5,td6,td7,td8)
+
+
+          
+
+          tbody.append(tr)
+        })
+      }
+
+     xyz(data);
+    })
+
+    
+    
+    
+
+  </script>
+</html>

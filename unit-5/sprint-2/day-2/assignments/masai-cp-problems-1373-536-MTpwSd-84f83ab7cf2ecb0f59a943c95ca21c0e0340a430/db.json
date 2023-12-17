@@ -1,0 +1,39 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "React",
+      "status": true
+    },
+    {
+      "id": 2,
+      "title": "Redux",
+      "status": true
+    },
+    {
+      "id": 3,
+      "title": "Css",
+      "status": true
+    },
+    {
+      "id": 4,
+      "title": "MongoDb",
+      "status": false
+    },
+    {
+      "id": 5,
+      "title": "TypeScript",
+      "status": false
+    },
+    {
+      "title": "Java",
+      "status": false,
+      "id": 6
+    },
+    {
+      "title": "css",
+      "status": false,
+      "id": 7
+    }
+  ]
+}

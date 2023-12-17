@@ -1,0 +1,29 @@
+.coffee_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 320px;
+  gap: 10px;
+  padding: 20px;
+}
+
+.coffee_card {
+  display: flex;
+  gap: 20px;
+  border: 1px solid gray;
+}
+
+.coffee_card * {
+  margin: 0;
+}
+
+.coffee_card div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px;
+}
+
+.coffee_card img {
+  width: 50%;
+  height: 100%;
+}

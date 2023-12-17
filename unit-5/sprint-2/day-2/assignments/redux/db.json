@@ -1,0 +1,74 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "React",
+      "status": true
+    },
+    {
+      "id": 2,
+      "title": "Redux",
+      "status": true
+    },
+    {
+      "id": 3,
+      "title": "Css",
+      "status": true
+    },
+    {
+      "id": 4,
+      "title": "MongoDb",
+      "status": false
+    },
+    {
+      "id": 5,
+      "title": "TypeScript",
+      "status": false
+    },
+    {
+      "title": "java",
+      "status": false,
+      "id": 6
+    },
+    {
+      "title": "dsa",
+      "status": false,
+      "id": 7
+    },
+    {
+      "title": "node",
+      "status": false,
+      "id": 8
+    },
+    {
+      "title": "coding",
+      "status": false,
+      "id": 9
+    },
+    {
+      "title": "css",
+      "status": false,
+      "id": 10
+    },
+    {
+      "title": "Chakra",
+      "status": false,
+      "id": 11
+    },
+    {
+      "title": "ja",
+      "status": false,
+      "id": 12
+    },
+    {
+      "title": "html5",
+      "status": false,
+      "id": 13
+    },
+    {
+      "title": "css4",
+      "status": false,
+      "id": 14
+    }
+  ]
+}

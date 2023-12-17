@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main{
+        width: 280px;
+        height: 400px;
+       
+        margin: auto;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+       
+    }
+    
+    .main h1{
+        text-align: center;
+        color: teal;
+    }
+    .rw2{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        column-gap: 5px;
+        row-gap: 5px;
+
+       
+    }
+    .rw2 > button{
+        height: 50px;
+        width: 50px;
+        margin-bottom: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    .row .dis{
+        width: 213px;
+        height: 60px;
+       
+        margin: auto;
+       margin-bottom: 10px;
+       box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    .rw2 >.blck{
+        background-color: black;
+        color: white;
+    }
+    .rw2 .red{
+        background-color: red;
+        color: white
+    }
+</style>
+<body>
+    <div class="main">
+        <h1>Masai Calculator</h1>
+        <div class="row">
+           <div class="dis"></div>
+            <div class="rw2">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="blck">+</button>
+            </div>
+            <div class="rw2">
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="blck">-</button>
+            </div>
+            <div class="rw2">
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button class="blck">x</button>
+            </div>
+            <div class="rw2">
+                <button class="red">C</button>
+                <button>0</button>
+                <button class="blck">=</button>
+                <button class="blck">/</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

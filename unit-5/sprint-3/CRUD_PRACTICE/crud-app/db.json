@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "image": "https://dummyimage.com/600x400/000/fff",
+      "price": 202,
+      "brand": "nike",
+      "name": "shoes",
+      "category": "shoes",
+      "gender": "kids",
+      "id": 1
+    },
+    {
+      "image": "https://dummyimage.com/600x400/000/fff",
+      "price": 2345,
+      "brand": "Nike",
+      "name": "Shirt",
+      "category": "top-wear",
+      "gender": "male",
+      "id": 2
+    },
+    {
+      "image": "https://dummyimage.com/600x400/000/fff",
+      "price": 4567,
+      "brand": "Zara",
+      "name": "Kurti",
+      "category": "top-wear",
+      "gender": "female",
+      "id": 3
+    },
+    {
+      "image": "https://dummyimage.com/600x400/000/fff",
+      "price": 2300,
+      "brand": "Levis",
+      "name": "Jeans",
+      "category": "bottom-wear",
+      "gender": "male",
+      "id": 4
+    },
+    {
+      "image": "https://dummyimage.com/600x400/000/fff",
+      "price": 2340,
+      "brand": "Levis",
+      "name": "Jeans",
+      "category": "bottom-wear",
+      "gender": "female",
+      "id": 5
+    },
+    {
+      "image": "https://dummyimage.com/600x400/000/fff",
+      "price": 1250,
+      "brand": "Levis",
+      "name": "Jeans",
+      "category": "bottom-wear",
+      "gender": "kids",
+      "id": 6
+    }
+  ]
+}

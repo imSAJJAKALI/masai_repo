@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("https://abilitynet.org.uk/sites/abilitynet.org.uk/files/admin/Emojis.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h1{
+            text-align: center;
+        }
+        .mid{
+            display: flex;
+            justify-content: center;
+        }
+       .main{
+            background-color: teal;
+            border-radius: 20px;
+           
+            opacity: 0.8;
+            padding: 20px;
+            width: 500px;
+            margin: 0 auto; /* Center the main div */
+            height: 80vh;
+        }
+        p{
+            font-size: 30px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <h1>Joke Generator</h1>
+        </div>
+        <div class="mid">
+            <input type="text" placeholder="Write your content" id="inputText">
+            <button onclick="handleShow()" id="generateButton">Send</button>
+        </div>
+        <div>
+            <p id="quote">Generated joke will appear here</p>
+        </div>
+    </div>
+    <script>
+        const data=document.getElementById('inputText');
+        const jokes=document.getElementById('quote')
+       
+        const handleShow=()=>{
+            fetch('https://jokes-45ou.onrender.com/joke',{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({keyword:data.value})
+        
+      })
+      .then((res)=>res.json())
+      .then((res)=>jokes.innerText=res.jokes)
+      .catch((err)=>console.log(err))
+        }
+      
+     
+      
+    </script>
+</body>
+</html>
